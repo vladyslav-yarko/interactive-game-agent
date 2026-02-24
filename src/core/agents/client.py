@@ -5,10 +5,16 @@ from src.core.agents.agent import Agent
 
 class ClientAgent(Agent):
     def __init__(self, url: str, graph_name: str):
-        self.client = get_client(
+        self.__client = get_client(
             url=url
         )
-        self.graph_name = graph_name
+        self.__graph_name = graph_name
 
-    def __getattr__(self, item):
-        return getattr(self.client, item)
+    async def run(self, input: BaseModel) -> BaseModel:
+        result = self.__client.runs.create(
+            assistant_id=self.__graph_name
+        )
+        return result
+
+    async def stream(self, input: BaseModel) -> Iterator[str]:
+        pass

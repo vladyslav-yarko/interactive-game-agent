@@ -16,18 +16,18 @@ class BaseGraph(Graph):
         input_state: BaseModel,
         output_state: BaseModel
     ):
-        self.overall_state = overall_state
-        self.input_state = input_state
-        self.output_state = output_state
+        self.__overall_state = overall_state
+        self.__input_state = input_state
+        self.__output_state = output_state
         self.graph = StateGraph(
-            self.overall_state,
-            input_schema=self.input_state,
-            output_schema=self.output_state
+            self.__overall_state,
+            input_schema=self.__input_state,
+            output_schema=self.__output_state
         )
         self.compiled_graph: CompiledStateGraph
 
     def build(self, builder: Builder) -> None:
-        builder.build_graph(self.graph)
+        builder.build_graph(self)
     
     def compile(self) -> CompiledStateGraph:
         graph = self.graph.compile()

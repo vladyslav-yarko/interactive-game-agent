@@ -18,3 +18,8 @@ class Graph(ABC):
     @abstractmethod
     def display(self, *args, **kwargs) -> Any:
         raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def compiled_graph(self):
+        raise NotImplementedError
