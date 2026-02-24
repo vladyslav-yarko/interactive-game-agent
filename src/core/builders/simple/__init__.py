@@ -13,4 +13,4 @@ class SimpleBuilder(Builder):
         self.persona_node = a
 
     def build_graph(self, graph: Graph) -> None:
-        pass
+        graph.graph.add_node("")
