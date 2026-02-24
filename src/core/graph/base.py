@@ -3,6 +3,7 @@ from langgraph.graph.state import CompiledStateGraph
 from pydantic import BaseModel
 
 from src.core.graph.graph import Graph
+from src.core.builders import Builder
 
 
 class BaseGraph(Graph):
@@ -21,8 +22,8 @@ class BaseGraph(Graph):
             output_schema=self.output_state
         )
 
-    def build(self, builder) -> None:
-        pass
+    def build(self, builder: Builder) -> None:
+        builder.build_graph(self.graph)
     
     def compile(self) -> CompiledStateGraph:
         graph = self.graph.compile()
