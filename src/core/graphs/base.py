@@ -29,9 +29,8 @@ class BaseGraph(Graph):
     def build(self, builder: Builder) -> None:
         builder.build_graph(self)
     
-    def compile(self) -> CompiledStateGraph:
-        graph = self.__graph.compile()
-        return graph
+    def compile(self) -> None:
+        self.__compiled_graph = self.__graph.compile()
 
     def display(self) -> Optional[DisplayHandle]:
         if self.__compiled_graph is not None:
