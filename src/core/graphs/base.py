@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Type
 
 from langgraph.graph import StateGraph
 from langgraph.graph.state import CompiledStateGraph
@@ -12,9 +12,9 @@ from src.core.builders import Builder
 class BaseGraph(Graph):
     def __init__(
         self,
-        overall_state: BaseModel,
-        input_state: BaseModel,
-        output_state: BaseModel
+        overall_state: Type[BaseModel],
+        input_state: Type[BaseModel],
+        output_state: Type[BaseModel]
     ):
         self.__overall_state = overall_state
         self.__input_state = input_state
