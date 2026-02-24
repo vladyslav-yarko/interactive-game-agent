@@ -2,7 +2,7 @@ from langgraph.graph import StateGraph
 from langgraph.graph.state import CompiledStateGraph
 from pydantic import BaseModel
 
-from src.core.graph.graph import Graph
+from src.core.graphs.graph import Graph
 from src.core.builders import Builder
 
 

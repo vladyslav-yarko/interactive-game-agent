@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from src.core.graph import Graph
+from src.core.graphs import Graph
 
 
 #NOTE: builder is extraordinary core component. Builder will be specifically inherited for specific purpose
