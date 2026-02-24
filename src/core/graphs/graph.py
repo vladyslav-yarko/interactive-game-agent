@@ -14,3 +14,7 @@ class Graph(ABC):
     @abstractmethod
     def compile(self, *args, **kwargs) -> Any:
         raise NotImplementedError
+    
+    @abstractmethod
+    def display(self, *args, **kwargs) -> Any:
+        raise NotImplementedError
