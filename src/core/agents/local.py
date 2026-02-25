@@ -10,8 +10,8 @@ class LocalAgent(Agent):
     def __init__(self, graph: Graph):
         self.__graph = graph
 
-    async def run(self, input: BaseModel) -> BaseModel:
-        result = self.__graph.compiled_graph.ainvoke(input)
+    async def run(self, input: BaseModel):
+        result = await self.__graph.compiled_graph.ainvoke(input)
         return result
 
     async def stream(self, input: BaseModel) -> Iterator[str]:
