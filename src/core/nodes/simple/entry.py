@@ -9,7 +9,7 @@ class EntryNode(Node):
     def __init__(self):
         pass
     
-    def node(self, state: SimpleState) -> str:
-        if random.random() < 0.5:
-            return SimpleNodeEnum.sad_node.value
-        return SimpleNodeEnum.glad_node.value
+    def node(self, state: SimpleState) -> dict:
+        return {
+            "introduction": "is"
+        }

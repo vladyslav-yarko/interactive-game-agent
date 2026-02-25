@@ -8,5 +8,5 @@ class PersonaNode(Node):
     
     def node(self, state: SimpleState) -> dict:
         return {
-            "persona": f"{state.name} is {state.mood}"
+            "persona": f"{state.name} {state.introduction} {state.mood}"
         }
